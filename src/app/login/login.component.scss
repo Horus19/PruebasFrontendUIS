@@ -1,44 +1,164 @@
 mat-card {
-    max-width: 600px;
+    max-width: 1100px;
     margin: 2em auto;
     text-align: center;
     max-height: 600px;
-  }
-  
-  .header{
+    border-radius: 5px;
+    padding: 0;
+}
+
+.header {
     text-align: center;
-  
-  }
-  .full-width {
-    width: 80%;
-  }
-  
-  .button-row {
-    padding-top: 5px;
-  }
-  
-  .button-row a {
+}
+
+.button-row a {
     margin-right: 8px;
     text-align: center;
-  }
-  
-  .forget-password{
+}
+
+.forget-password {
     padding-left: 0px;
-  }
-  
-  .emailInput{
+}
+
+.emailInput {
     padding-top: 10px;
-  }
-  
-  .contentBody {
+}
+
+.content-body {
+    min-height: 100%;
     padding: 60px 1rem;
-    background :#1b6ca8;
+    background: #99afac;
     display: block;
-  }
-  
-  .aLink{
+}
+
+.aLink {
     float: right;
     padding-right: 60px;
     text-decoration: none;
-  }
-  
+}
+
+.d-flex {
+    display: flex;
+}
+
+.img-responsive {
+    display: block;
+    padding: 0px;
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px 0 0 5px;
+}
+
+mat-card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.submit {
+    background-color: #339900;
+    color: aliceblue;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+form {
+    width: 70%;
+}
+
+.password {
+    width: 100%;
+}
+
+.logo {
+    max-width: 50%;
+    align-self: center;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+.form-header {
+    margin-top: 2rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    color: #99cc33;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    font-family: Open sans;
+}
+
+@media screen and (max-width: 600px) {
+    .img-responsive {
+        display: none;
+    }
+    .submit {
+        margin-bottom: 2rem;
+    }
+    .logo {
+        max-width: 80%;
+        margin-top: 1rem;
+    }
+    .mat-card {
+        margin: 0;
+        margin-left: 0px;
+        width: 90%;
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .mat-card {
+        width: 90%;
+        height: 70%;
+    }
+    .logo {
+        max-width: 80%;
+        align-self: center;
+        margin-bottom: 1rem;
+    }
+    .img-responsive {
+        width: 55%;
+    }
+}
+
+.validaciones {
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+    width: 80%;
+}
+
+.validacion {
+    margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    color: #339900;
+}
+
+.background {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    padding-top: 4rem;
+    // padding: 60px 1rem;
+    // display: block;
+    background-image: url('../../assets/DSC_0287.jpeg');
+    background-size: cover;
+    // z-index: -1;
+    // filter: blur(5px);
+    position: fixed;
+    justify-content: center;
+}
+
+.icon-validation {
+    transform: scale(0.5);
+}

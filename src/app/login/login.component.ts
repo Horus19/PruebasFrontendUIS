@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,25 +9,26 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
 
-  hide: boolean = false;
-
   constructor(private fb: FormBuilder) {
   }
 
-  ngOnInit() {
-  }
+  hide = false;
+  hideConf = false;
 
   loginForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
-  })
+  });
+
+  ngOnInit(): void {
+  }
 
 
-  onLogin() {
+  onLogin(): void {
     if (!this.loginForm.valid) {
       return;
     }
-    console.log(this.loginForm.value);
+    console.log('lofin');
   }
 
 }

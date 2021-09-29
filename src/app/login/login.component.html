@@ -1,46 +1,82 @@
-<mat-card>
-    <mat-card-content>
-      <div class="header">
-        <P>Sign Into Your Account </P>
-      </div>
-      <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
-        <div class="emailInput">
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Email</mat-label>
-            <input
-              formControlName="email"
-              matInput
-              placeholder="Enter email address" required
-            />
-            <mat-error *ngIf="!loginForm.controls['email'].valid">
-                Email is required
-              </mat-error>
-          </mat-form-field>
-        </div>
+<div class="background">
+    <mat-card class="d-flex">
+        <img src="../../assets/DSC_0287.jpeg" class="img-responsive">
+        <mat-card-content>
+            <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
 
-        <div>
-          <span>
-            <a class="text-link" class="aLink" routerLink="/auth/forgot-password">Forgot Password?</a>
-          </span>
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Password</mat-label>
-            <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
-            <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>
-                {{hide ? 'visibility_off' : 'visibility'}}
-            </mat-icon>
-        </button>
-        <mat-error *ngIf="!loginForm.controls['password'].valid">
-            Password is required
-          </mat-error>
-        </mat-form-field>
-        </div>
-        <button mat-flat-button color="primary">Login</button>
-      </form>
+                <div class="form-header">
+                    <img src="../../assets/LOGO UIS_PNG.png" class='logo' alt="">
+                    <p class='title'>Cambiar contraseña</p>
+                </div>
 
-      <div class="button-row">
-        <p>Create New Account</p>
-      </div>
-    </mat-card-content>
-  </mat-card>
+
+                <div class="password">
+                    <mat-form-field class="password" appearance="legacy">
+                        <mat-label>Nueva contraseña</mat-label>
+                        <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
+                      <mat-icon>
+                        {{hide ? 'visibility_off' : 'visibility'}}
+                      </mat-icon>
+                    </button>
+                        <mat-error *ngIf="!loginForm.controls['password'].valid">
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field class="password" appearance="legacy">
+                        <mat-label>Confirmar nueva contraseña</mat-label>
+                        <input formControlName="password" matInput [type]=" hideConf ? 'password' : 'text'" required />
+                        <button mat-icon-button matSuffix (click)="hideConf = !hideConf" [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">
+                      <mat-icon>
+                        {{hideConf ? 'visibility_off' : 'visibility'}}
+                    </mat-icon>
+                    </button>
+                        <mat-error *ngIf="!loginForm.controls['password'].valid">
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+
+                <div class="validaciones">
+                    <div class="validacion">
+                        <span>Minimo 8 caracteres</span>
+                        <mat-icon class='icon-validation'>
+                            done
+                        </mat-icon>
+                    </div>
+                    <div class="validacion">
+                        <span>Al menos un caracter especial @,$,(,),.,*,-,+</span>
+                        <mat-icon class='icon-validation'>
+                            done
+                        </mat-icon>
+                    </div>
+                    <div class="validacion">
+                        <span>Al menos una mayuscula</span>
+                        <mat-icon class='icon-validation'>
+                            done
+                        </mat-icon>
+                    </div>
+                    <div class="validacion">
+                        <span>Al menos una minuscula</span>
+                        <mat-icon class='icon-validation'>
+                            done
+                        </mat-icon>
+                    </div>
+
+                    <div class="validacion">
+                        <span>Al menos un numero</span>
+                        <mat-icon class='icon-validation'>
+                            done
+                        </mat-icon>
+                    </div>
+                </div>
+
+                <button mat-flat-button class='submit'>Cambiar contraseña</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
